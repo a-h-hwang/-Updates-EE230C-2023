@@ -198,3 +198,43 @@ and the occupation factor with ($N$) and without bias ($N_{0}$)  are \begin{equa
     R = \frac{\partial V}{\partial I} = \frac{h}{2e^{2}\overline{M}}\cdot\frac{1}{\overline{T}_{\varepsilon_{i}}}
 \end{equation} 
 
+Thus, the question is: how to determine $\overline{T}_{\varepsilon_{i}}$? Let's consider two scattering events in the channel as shown in Fig. 1.5.
+\begin{figure}[tbp]
+\includegraphics[width=0.5\textwidth]{figures/Fig1_5}
+\centering
+\caption{\small Two scattering events 1 and 2 with reflection $R$ and transmission $T$.}
+\end{figure} The total transmission $T$ is \begin{align}
+    T& = T_{1}T_{2} + T_{1}R_{2}R_{1}T_{2} + T_{1}T_{2}\left(R_{2}R_{1}\right)^{2} + \cdots\nonumber\\
+    &= T_{1}T_{2}\left(1 + R_{1}R_{2} + \left(R_{2}R_{1}\right)^{2} + \cdots\right)\nonumber\\
+    &= \frac{T_{1}T_{2}}{1-R_{1}R_{2}} = \frac{T_{1}T_{2}}{1-\left(1-T_{1}\right)\left(1-T_{2}\right)} = \frac{T_{1}T_{2}}{T_{1}+T_{2}-T_{1}T_{2}}\nonumber
+\end{align} \begin{align}
+    \Rightarrow \frac{1}{T}& = \frac{T_{1}+T_{2}-T_{1}T_{2}}{T_{1}T_{2}}\nonumber
+\end{align} \begin{align}
+    \Rightarrow \frac{1-T}{T}& = \frac{T_{1}+T_{2}-2T_{1}T_{2}}{T_{1}T_{2}}\nonumber\\
+    &= \frac{1-T_{1}}{T_{1}} + \frac{1-T_{2}}{T_{2}}
+\end{align} Therefore, if there are $N$ scattering events and the channel length is $L$, the total transmission $T$ probability is \begin{equation}
+    \frac{1-T}{T} = \sum_{i}^{N}{\frac{1-T_{i}}{T_{i}}}
+\end{equation} Assume the transmission probability of each scattering event is identical ($T_{1} = T_{2} = \cdots = T_{k}$), we have \begin{equation}
+    \frac{1-T}{T} = \frac{N\left(1-T_{k}\right)}{T_{k}}\nonumber
+\end{equation} \begin{equation}
+    \Rightarrow \frac{1}{T} = \frac{N\left(1-T_{k}\right)+T_{k}}{T_{k}}
+\end{equation} Define \begin{equation}
+    \nu \equiv \frac{N}{L}
+\end{equation} The Equation (1.49) becomes \begin{align}
+    \frac{1}{T}&= \frac{\nu L \left(1-T_{k}\right)+T_{k}}{T_{k}}\nonumber\\
+    &= \frac{L+\frac{T_{k}}{\nu\left(1-T_{k}\right)}}{\frac{T_{k}}{\nu\left(1-T_{k}\right)}}\nonumber\\
+    &= \frac{L+T_{k}\lambda}{T_{k}\lambda}\nonumber\\
+    &= \frac{L+\lambda'}{\lambda'}
+\end{align} where \begin{equation}
+    \nu\left(1-T_{k}\right) \equiv \frac{1}{\lambda}
+\end{equation} and \begin{equation}
+    \lambda' \equiv T_{k}\lambda
+\end{equation} Here, $\lambda$ and $\lambda'$ are the mean free path, and $\lambda \approx \lambda'$\footnote{For one-dimensional channel, $T_{k} \approx 1$. Otherwise, the electrons will be localized.}. Therefore, the resistance becomes \begin{equation}
+    R = \frac{\partial V}{\partial I} = \frac{h}{2e^{2}\overline{M}}\cdot\left(1+\frac{L}{\lambda'}\right)
+\end{equation}
+\begin{figure}[tbp]
+\includegraphics[width=0.4\textwidth]{figures/Fig1_6}
+\centering
+\caption{\small Resistance $R$ versus channel length $L$ with three regions: ballistic, quasi-ballistic, and Ohm's law.}
+\end{figure} Fig. 1.6 shows the resistance versus the channel length. At $L \gg \lambda'$ limit, the Equation (1.54) reduces back to Ohm's law as mentioned in Section 1.1. At $L \ll \lambda'$ limit (ballistic limit without any scattering), the resistance is governed by $\frac{h}{2e^{2}\overline{M}}$ which sets the upper limit of the conductivity. Between above two regions, it's quasi-ballistic region where is the main focus of the discussion in next few chapters.
+
